@@ -1,7 +1,8 @@
 import React from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
+import type { ThreeElements } from "@react-three/fiber";
 
-type GirlSmokingModelProps = JSX.IntrinsicElements["group"] & {
+type GirlSmokingModelProps = Partial<ThreeElements["primitive"]> & {
   animate?: boolean;
   path?: string;
   targetTime?: number;
@@ -27,6 +28,7 @@ export default function GirlSmokingModel({
       action.play();
 
       if (targetTime) {
+        // eslint-disable-next-line react-hooks/immutability
         action.paused = true;
 
         action.time = targetTime;
@@ -40,7 +42,7 @@ export default function GirlSmokingModel({
     };
   }, [animate, targetTime, actions, mixer]);
 
-  return <primitive object={scene} {...props} />;
+  return <primitive {...props} object={scene} />;
 }
 
 useGLTF.preload("/models/girl_smoking.glb");

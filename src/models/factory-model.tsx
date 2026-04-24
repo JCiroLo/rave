@@ -1,6 +1,7 @@
 import { useGLTF } from "@react-three/drei";
+import type { ThreeElements } from "@react-three/fiber";
 
-type FactoryModelProps = JSX.IntrinsicElements["group"] & {
+type FactoryModelProps = Partial<ThreeElements["primitive"]> & {
   path?: string;
 };
 

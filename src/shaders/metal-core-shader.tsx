@@ -189,12 +189,12 @@ class MetalCoreEffectImpl extends Effect {
   }
 
   update(
-    renderer: THREE.WebGLRenderer,
+    _: THREE.WebGLRenderer,
     inputBuffer: THREE.WebGLRenderTarget,
     deltaTime: number
   ) {
     this.time += deltaTime;
-    this.uniforms.get("time").value = this.time;
+    this.uniforms.get("time")!.value = this.time;
     this.uniforms
       .get("viewportSize")
       ?.value.set(inputBuffer.width, inputBuffer.height);

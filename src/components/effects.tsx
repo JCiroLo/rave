@@ -1,15 +1,15 @@
 import * as THREE from "three";
 import {
   Bloom,
-  DepthOfField,
+  // DepthOfField,
   EffectComposer,
-  Vignette,
+  // Vignette,
 } from "@react-three/postprocessing";
 import { useControls } from "leva";
-import { LensArrayEffect } from "@/shaders/lens-array-effect-shader";
+// import { LensArrayEffect } from "@/shaders/lens-array-effect-shader";
 import MetalCoreEffect from "@/shaders/metal-core-shader";
-import { CrtEffect } from "@/shaders/crt-effect-shader";
-import Posterizer from "@/shaders/posterizer-shader";
+// import { CrtEffect } from "@/shaders/crt-effect-shader";
+// import Posterizer from "@/shaders/posterizer-shader";
 
 const Effects = () => {
   const metalCoreControls = useControls("Metal Core Effect", {
@@ -28,15 +28,15 @@ const Effects = () => {
     tintStrength: { value: 0.15, min: 0, max: 1, step: 0.01 },
   });
 
-  const lenseArrayControls = useControls("Lens Array Effect", {
-    gridSize: { value: 50.0, min: 1.0, max: 200, step: 1 },
-    curvature: { value: 0.25, min: 0.0, max: 1.0, step: 0.01 },
-    gridAngle: { value: 0.0, min: 0.0, max: Math.PI * 2, step: 0.01 },
-    shape: { value: 0, options: { Circle: 0, Diamond: 1, Square: 2 } },
-    scaleX: { value: 1.0, min: 0.1, max: 5.0, step: 0.1 },
-    scaleY: { value: 1.0, min: 0.1, max: 5.0, step: 0.1 },
-    stagger: true,
-  });
+  // const lenseArrayControls = useControls("Lens Array Effect", {
+  //   gridSize: { value: 50.0, min: 1.0, max: 200, step: 1 },
+  //   curvature: { value: 0.25, min: 0.0, max: 1.0, step: 0.01 },
+  //   gridAngle: { value: 0.0, min: 0.0, max: Math.PI * 2, step: 0.01 },
+  //   shape: { value: 0, options: { Circle: 0, Diamond: 1, Square: 2 } },
+  //   scaleX: { value: 1.0, min: 0.1, max: 5.0, step: 0.1 },
+  //   scaleY: { value: 1.0, min: 0.1, max: 5.0, step: 0.1 },
+  //   stagger: true,
+  // });
 
   const bloom = useControls("Bloom", {
     luminanceThreshold: { value: 0.5, min: 0, max: 1, step: 0.01 },
