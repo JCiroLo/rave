@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+.user-interface {
+  &__bar {
+    position: fixed;
+    z-index: 1;
+    bottom: 16px;
+    left: 50%;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding: 8px;
+    background-color: #87878755;
+    border-radius: 16px;
+    transform: translateX(-50%);
+  }
+}
